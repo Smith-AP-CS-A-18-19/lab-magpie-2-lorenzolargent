@@ -16,7 +16,7 @@ public class Magpie2 {
 	 * @return a greeting
 	 */
 	public String getGreeting() {
-		return "Hello, let's talk.";
+		return "Whats up my dude";
 	}
 
 	/**
@@ -28,7 +28,8 @@ public class Magpie2 {
 	 */
 	public String getResponse(String statement) {
 		String response = "";
-		if (statement.indexOf("no") >= 0) {
+statement.trim();
+		 if (statement.indexOf("no") >= 0) {
 			response = "Why so negative?";
 		} else if (statement.indexOf("mother") >= 0
 				   || statement.indexOf("father") >= 0
@@ -36,6 +37,33 @@ public class Magpie2 {
 				   || statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		} else if (statement.indexOf("dog") >= 0
+					 || statement.indexOf("cat") >= 0
+					 || statement.indexOf("fish") >= 0
+					 || statement.indexOf("gorilla") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		} else if (statement.indexOf("Marshall") >= 0
+					 || statement.indexOf("GOAT") >= 0
+					 || statement.indexOf("McLaughlin") >= 0
+					 || statement.indexOf("Olson") >= 0)
+		{
+			response = "They have a group chat.";
+		} else if (statement.indexOf("grade") >= 0
+					 || statement.indexOf("Lorenzo") >= 0
+					 || statement.indexOf("AP") >= 0
+					 || statement.indexOf("Exam") >= 0)
+		{
+			response = "Lorenzo will get a five on the AP Exam";
+		} else if (statement.indexOf("Lorenzo") >= 0
+					 || statement.indexOf("Whats up") >= 0
+					 || statement.indexOf("How are you") >= 0
+					 || statement.indexOf("u up") >= 0)
+		{ response = "Hello";
+
+		} else if (statement.indexOf("Smith") >= 0)
+		{
+			response = "Did you mean Mr. Snowden";
 		} else {
 			response = getRandomResponse();
 		}
@@ -47,7 +75,7 @@ public class Magpie2 {
 	 * @return a non-committal string
 	 */
 	private String getRandomResponse() {
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 7;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -60,6 +88,12 @@ public class Magpie2 {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
 			response = "You don't say.";
+		} else if (whichResponse == 4) {
+			response = "I'm not smart enough to comprehend";
+		}	else if (whichResponse == 5) {
+				response = "I'm not sure";
+		} else if (whichResponse == 6) {
+			response = "That hasn't been programmed yet";
 		}
 
 		return response;

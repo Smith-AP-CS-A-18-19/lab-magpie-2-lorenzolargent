@@ -1,4 +1,5 @@
 import javax.swing.JOptionPane;
+import javafx.application.Application;
 
 /**
  * A simple class to run the Magpie class.
